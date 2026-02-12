@@ -1,6 +1,3 @@
-from datetime import date, datetime
-
-
 from datetime import datetime, date
 
 
@@ -29,11 +26,9 @@ def get_birthdays_per_week(users:list):
             if day_of_week in days_in_week:
                 days_in_week[day_of_week].append(name)
 
-    filtered_data = {k: v for k, v in days_in_week.items() if v}
-
+    filtered_data = {week_day: birthday_name for week_day, birthday_name in days_in_week.items() if birthday_name}
 
     return filtered_data
-
 
 
 if __name__ == "__main__":
